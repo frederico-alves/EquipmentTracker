@@ -1,18 +1,18 @@
-import { Typography, Container, Button, Stack } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
+import { Container, Box } from "@mui/material";
+import Dashboard from "./pages/Dashboard";
+import History from "./pages/History";
 
 function App() {
   return (
-    <Container maxWidth="sm" sx={{ mt: 8, textAlign: "center" }}>
-      <Typography variant="h4" gutterBottom>
-        Equipment Tracker
-      </Typography>
-      <Stack direction="row" spacing={2} justifyContent="center">
-        <Button variant="contained">Primary</Button>
-        <Button variant="outlined" color="secondary">
-          Secondary
-        </Button>
-      </Stack>
-    </Container>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Container maxWidth="lg" sx={{ mt: 5, mb: 5, flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/history" element={<History />} />
+        </Routes>
+      </Container>
+    </Box>
   );
 }
 

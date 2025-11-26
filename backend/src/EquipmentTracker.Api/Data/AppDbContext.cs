@@ -12,7 +12,7 @@ public class AppDbContext : DbContext
     // Object-relational Mapping (ORM) - Microsoft.EntityFrameworkCore
     // DbSet<T> represents a table in the database: Add(); Remove(); Find(); .Where(); .Select()
     public DbSet<Equipment> Equipment => Set<Equipment>();
-    public DbSet<StateChange> StateChanges => Set<StateChanges>();
+    public DbSet<StateChange> StateChanges => Set<StateChange>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -30,10 +30,10 @@ public class AppDbContext : DbContext
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Id).HasColumnName("id").HasDefaultValueSql("gen_random_uuid()");
             entity.Property(e => e.Name).HasColumnName("name").HasMaxLength(100).IsRequired();
-            entity.Property(e => e.Location)..HasColumnName("location").HasMaxLength(100).IsRequired();
+            entity.Property(e => e.Location).HasColumnName("location").HasMaxLength(100).IsRequired();
             entity.Property(e => e.CurrentState).HasColumnName("current_state").IsRequired();
             entity.Property(e => e.CreatedAt).HasColumnName("created_at").HasDefaultValueSql("NOW()");
-            entity.Property(e => e.UpdatedAt).HasColumnName("updated_at").HasDefaultValueSql("NOW()");
+            entity.Property(e => e.UpdateAt).HasColumnName("updated_at").HasDefaultValueSql("NOW()");
         });
 
         // Configure StateChange table
@@ -45,7 +45,7 @@ public class AppDbContext : DbContext
             entity.Property(e => e.EquipmentId).HasColumnName("equipment_id").IsRequired();
             entity.Property(e => e.PreviousState).HasColumnName("previous_state").IsRequired();
             entity.Property(e => e.NewState).HasColumnName("new_state").IsRequired();
-            entity.Property(e => e.ChangedBy).HasColumnName("changed_by").HasMaxLength(100).IsRequired();
+            entity.Property(e => e.ChangeBy).HasColumnName("changed_by").HasMaxLength(100).IsRequired();
             entity.Property(e => e.ChangedAt).HasColumnName("changed_at").HasDefaultValueSql("NOW()");
             entity.Property(e => e.Notes).HasColumnName("notes");
 
@@ -55,7 +55,7 @@ public class AppDbContext : DbContext
             //     .HasForeignKey(e => e.EquipmentId) // FK column is EquipmentId
             //     .OnDelete(DeleteBehavior.Cascade); // Delete changes when equipment is deleted
             
-            entity.HasOne(entity => e.Equipment)
+            entity.HasOne(e => e.Equipment)
                 .WithMany(eq => eq.StateChanges)
                 .HasForeignKey(e => e.EquipmentId)
                 .OnDelete(DeleteBehavior.Cascade);

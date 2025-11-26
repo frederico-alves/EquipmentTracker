@@ -46,3 +46,10 @@ SELECT * FROM state_changes;
 # Exit
 \q
 ```
+
+## Frontend
+
+```
+cd frontend
+npm i && npm run dev
+```

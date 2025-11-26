@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Button, Container, Box, Stack } from "@mui/material";
+import { Typography, Button, Container, Box, Stack } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import {
   Dashboard as DashboardIcon,
@@ -21,7 +21,7 @@ function App() {
           px: 3,
           display: "flex",
           alignItems: "center",
-          justifyContent: "right",
+          justifyContent: "space-between",
           backdropFilter: "blur(20px)",
           backgroundColor: "rgba(255, 255, 255, 0.7)",
           borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
@@ -30,6 +30,20 @@ function App() {
           zIndex: 1100,
         }}
       >
+        {/* Logo */}
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 700,
+            background: "linear-gradient(135deg, #0f172a 0%, #6366f1 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Equipment Tracker
+        </Typography>
+
         {/* Navigation Links */}
         <Stack direction="row" spacing={1}>
           <Button

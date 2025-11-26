@@ -20,7 +20,7 @@ public class AppDbContext : DbContext
         // Configure Equipment table
         modelBuilder.Entity<Equipment>(entity =>
         {
-            // Fluent API:
+            // Fluent API (Mapping properties and types):
             // entity.Property(e => e.Name)    // Configure "Name" property
             // .HasColumnName("name")       // Database column is "name" (lowercase)
             // .HasMaxLength(100)           // VARCHAR(100)

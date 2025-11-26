@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CFAD5BD0-E708-424C-8277-B2D4437A0B07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmenTracker.Api", "src\EquipmentTracker.Api\EquipmenTracker.Api.csproj", "{A803DDAC-E4B4-477D-90B9-85B0D43E31A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmentTracker.Api", "src\EquipmentTracker.Api\EquipmentTracker.Api.csproj", "{A803DDAC-E4B4-477D-90B9-85B0D43E31A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

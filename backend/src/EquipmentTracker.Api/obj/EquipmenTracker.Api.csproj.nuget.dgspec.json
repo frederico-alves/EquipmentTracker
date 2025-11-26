@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmenTracker.Api.csproj": {}
+    "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmentTracker.Api.csproj": {}
   },
   "projects": {
-    "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmenTracker.Api.csproj": {
+    "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmentTracker.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmenTracker.Api.csproj",
-        "projectName": "EquipmenTracker.Api",
-        "projectPath": "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmenTracker.Api.csproj",
+        "projectUniqueName": "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmentTracker.Api.csproj",
+        "projectName": "EquipmentTracker.Api",
+        "projectPath": "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmentTracker.Api.csproj",
         "packagesPath": "/Users/dkfrealv/.nuget/packages/",
         "outputPath": "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/obj/",
         "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/dkfrealv/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
+        "configFilePaths": ["/Users/dkfrealv/.nuget/NuGet/NuGet.Config"],
+        "originalTargetFrameworks": ["net9.0"],
         "sources": {
           "/opt/homebrew/Cellar/dotnet/9.0.8/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
@@ -30,9 +26,7 @@
           }
         },
         "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
+          "warnAsError": ["NU1605"]
         },
         "restoreAuditProperties": {
           "enableAudit": "true",

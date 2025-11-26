@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "djQRGTKtlTc=",
   "success": true,
-  "projectFilePath": "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmenTracker.Api.csproj",
+  "projectFilePath": "/Users/dkfrealv/PERSONAL_DEV/EquipmentTracker/backend/src/EquipmentTracker.Api/EquipmentTracker.Api.csproj",
   "expectedPackageFiles": [
     "/Users/dkfrealv/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/dkfrealv/.nuget/packages/microsoft.aspnetcore.openapi/9.0.8/microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",

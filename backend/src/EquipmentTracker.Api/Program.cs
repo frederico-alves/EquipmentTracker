@@ -53,4 +53,7 @@ using (var scope = app.Services.CreateScope())
     db.Database.EnsureCreated(); // Creates DB and tables if they don't exist - quick for development
 }
 
+app.UseCors("AllowFrontend");
+app.MapControllers();
+
 app.Run();

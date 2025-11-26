@@ -1,0 +1,91 @@
+@EquipmentTracker_Api_HostAddress = http://localhost:5284
+
+### Get all equipment
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment
+Accept: application/json
+
+###
+
+### Get equipment by ID (Molding Machine A1)
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/11111111-1111-1111-1111-111111111111
+Accept: application/json
+
+###
+
+### Get equipment by ID (Molding Machine A2)
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/22222222-2222-2222-2222-222222222222
+Accept: application/json
+
+###
+
+### Get equipment by ID (Packaging Line B1)
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/33333333-3333-3333-3333-333333333333
+Accept: application/json
+
+###
+
+### Get equipment by ID (Not Found - 404)
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+###
+
+### Update state to Yellow (Starting Up / Winding Down)
+PUT {{EquipmentTracker_Api_HostAddress}}/api/equipment/11111111-1111-1111-1111-111111111111/state
+Content-Type: application/json
+
+{
+  "newState": 1,
+  "changedBy": "Test User",
+  "notes": "Starting morning shift"
+}
+
+###
+
+### Update state to Green (Producing Normally)
+PUT {{EquipmentTracker_Api_HostAddress}}/api/equipment/22222222-2222-2222-2222-222222222222/state
+Content-Type: application/json
+
+{
+  "newState": 2,
+  "changedBy": "Operator John",
+  "notes": "Machine warmed up, starting production"
+}
+
+###
+
+### Update state to Red (Standing Still)
+PUT {{EquipmentTracker_Api_HostAddress}}/api/equipment/33333333-3333-3333-3333-333333333333/state
+Content-Type: application/json
+
+{
+  "newState": 0,
+  "changedBy": "Maintenance Team",
+  "notes": "Scheduled maintenance"
+}
+
+###
+
+### Get all state history
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/history
+Accept: application/json
+
+###
+
+### Get state history for specific equipment
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/history?equipmentId=11111111-1111-1111-1111-111111111111
+Accept: application/json
+
+###
+
+### Get state history with date filter
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/history?from=2025-01-01&to=2025-12-31
+Accept: application/json
+
+###
+
+### Get state history with all filters
+GET {{EquipmentTracker_Api_HostAddress}}/api/equipment/history?equipmentId=11111111-1111-1111-1111-111111111111&from=2025-01-01&to=2025-12-31
+Accept: application/json
+
+###

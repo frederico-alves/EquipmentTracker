@@ -1,0 +1,4 @@
+# Equipment Tracker
+
+- backend
+- frontend

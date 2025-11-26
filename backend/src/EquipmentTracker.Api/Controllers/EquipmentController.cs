@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using EquipmentTracker.Api.DTOs;
 using EquipmentTracker.Api.Services;
+using EquipmentTracker.Api.Hubs;
 
 namespace EquipmentTracker.Api.Controllers;
 
@@ -14,10 +16,14 @@ public class EquipmentController : ControllerBase
 //         api/equipment
 {
     private readonly IEquipmentService _equipmentService;
+    private readonly IHubContext<EquipmentHub> _hubContext;
 
-    public EquipmentController(IEquipmentService equipmentService)
+    public EquipmentController(
+        IEquipmentService equipmentService,
+        IHubContext<EquipmentHub> hubContext)
     {
         _equipmentService = equipmentService;
+        _hubContext = hubContext;
     }
 
     // Get all equipment with current states
@@ -51,6 +57,12 @@ public class EquipmentController : ControllerBase
     {
         var equipment = await _equipmentService.UpdateStateAsync(id, request);
         if (equipment == null) return NotFound(); // Returns 404 status
+
+        // SignalR - Notify all connected clients via SignalR
+        await _hubContext.Clients.Group("EquipmentUpdates")
+            .SendAsync("EquipmentStateChanged", equipment);
+        //             └── Event name            └── Data payload
+        
         return Ok(equipment); // Returns 200 with data
     }
 

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using EquipmentTracker.Api.Data;
 using EquipmentTracker.Api.Services;
+using EquipmentTracker.Api.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IEquipmentService, EquipmentService>();
 //                             └── interface        └── implementation
 
+// SignalR - Add real-time capabilities
+builder.Services.AddSignalR();
+
 // CORS (allow frontend to call API)
 builder.Services.AddCors(options =>
 {
@@ -29,7 +33,7 @@ builder.Services.AddCors(options =>
             )
             .AllowAnyHeader()       // Accept any HTTP headers
             .AllowAnyMethod()       // Accept GET, POST, PUT, DELETE
-            .AllowCredentials();    // Allow cookies/auth headers
+            .AllowCredentials();    // Required for SignalR
     });
 });
 
@@ -45,6 +49,12 @@ if (app.Environment.IsDevelopment())
 // Uncomment for HTTPS:
 // app.UseHttpsRedirection();
 
+app.UseCors("AllowFrontend");
+app.MapControllers();
+
+// Map SignalR hub endpoint
+app.MapHub<EquipmentHub>("/hubs/equipment");
+
 // Create database and seed data
 using (var scope = app.Services.CreateScope())
 {
@@ -52,8 +62,5 @@ using (var scope = app.Services.CreateScope())
     // Update to Migrations here in production:
     db.Database.EnsureCreated(); // Creates DB and tables if they don't exist - quick for development
 }
-
-app.UseCors("AllowFrontend");
-app.MapControllers();
 
 app.Run();

@@ -1,4 +1,4 @@
-using Equipment.Api.DTOs;
+using EquipmentTracker.Api.DTOs;
 
 namespace EquipmentTracker.Api.Services;
 

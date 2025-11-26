@@ -12,7 +12,7 @@ public class Equipment
     public string Location { get; set; } = string.Empty;
     public ProductionState CurrentState { get; set; } = ProductionState.Red;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public DateTime UpdateAt { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation property - one-to-many relationship between
     // EquipmentTracker and StateChange

@@ -33,7 +33,7 @@ public class AppDbContext : DbContext
             entity.Property(e => e.Location).HasColumnName("location").HasMaxLength(100).IsRequired();
             entity.Property(e => e.CurrentState).HasColumnName("current_state").IsRequired();
             entity.Property(e => e.CreatedAt).HasColumnName("created_at").HasDefaultValueSql("NOW()");
-            entity.Property(e => e.UpdateAt).HasColumnName("updated_at").HasDefaultValueSql("NOW()");
+            entity.Property(e => e.UpdatedAt).HasColumnName("updated_at").HasDefaultValueSql("NOW()");
         });
 
         // Configure StateChange table
@@ -45,7 +45,7 @@ public class AppDbContext : DbContext
             entity.Property(e => e.EquipmentId).HasColumnName("equipment_id").IsRequired();
             entity.Property(e => e.PreviousState).HasColumnName("previous_state").IsRequired();
             entity.Property(e => e.NewState).HasColumnName("new_state").IsRequired();
-            entity.Property(e => e.ChangeBy).HasColumnName("changed_by").HasMaxLength(100).IsRequired();
+            entity.Property(e => e.ChangedBy).HasColumnName("changed_by").HasMaxLength(100).IsRequired();
             entity.Property(e => e.ChangedAt).HasColumnName("changed_at").HasDefaultValueSql("NOW()");
             entity.Property(e => e.Notes).HasColumnName("notes");
 

@@ -1,7 +1,10 @@
 # Equipment Tracker
 
+![preview](https://github.com/user-attachments/assets/fa477be0-fab5-47ce-bb94-c02a51d8bdfd)
+
 - Equipment Dashboard - Monitor and manage your equipment states in real-time
 - State History - Track and analyse equipment state changes over time
+
 
 ## Run project from Docker
 

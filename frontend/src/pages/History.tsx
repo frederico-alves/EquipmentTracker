@@ -34,8 +34,8 @@ export default function History() {
   // FILTER STATE (Controlled Inputs)
   // ============================================
   const [selectedEquipment, setSelectedEquipment] = useState<string>("");
-  const [fromDate, setFromDate] = useState<string>("");
-  const [toDate, setToDate] = useState<string>("");
+  const [fromDate] = useState<string>("");
+  const [toDate] = useState<string>("");
 
   // ============================================
   // EFFECT 1: Load equipment list (for dropdown)
@@ -50,6 +50,7 @@ export default function History() {
   // EFFECT 2: Load history when filters change
   // ============================================
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getStateHistory(
       selectedEquipment || undefined,

@@ -47,9 +47,9 @@ export default function StateButton({
     <Box
       sx={{
         display: "flex",
-        gap: 1,
-        p: 0.5,
-        borderRadius: 3,
+        gap: 2,
+        p: 1,
+        borderRadius: 4,
         backgroundColor: "rgba(0, 0, 0, 0.03)",
       }}
     >
@@ -64,16 +64,23 @@ export default function StateButton({
                 onClick={() => onStateChange(state)}
                 disabled={disabled}
                 sx={{
-                  width: 44,
-                  height: 44,
+                  width: 80,
+                  height: 80,
+                  minWidth: 80,
+                  minHeight: 80,
                   backgroundColor: isActive ? config.hoverBg : "transparent",
                   border: isActive
-                    ? `2px solid ${config.color}`
-                    : "2px solid transparent",
+                    ? `3px solid ${config.color}`
+                    : "3px solid transparent",
                   transition: "all 0.2s ease",
+                  touchAction: "manipulation",
                   "&:hover": {
                     backgroundColor: config.hoverBg,
                     transform: "scale(1.05)",
+                  },
+                  "&:active": {
+                    transform: "scale(0.95)",
+                    backgroundColor: config.hoverBg,
                   },
                   "&:disabled": {
                     opacity: 0.5,
@@ -82,11 +89,11 @@ export default function StateButton({
               >
                 <FiberManualRecord
                   sx={{
-                    fontSize: isActive ? 24 : 20,
+                    fontSize: isActive ? 48 : 40,
                     color: config.color,
                     transition: "all 0.2s ease",
                     filter: isActive
-                      ? `drop-shadow(0 0 6px ${config.color})`
+                      ? `drop-shadow(0 0 8px ${config.color})`
                       : "none",
                   }}
                 />

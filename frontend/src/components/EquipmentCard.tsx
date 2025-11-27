@@ -98,7 +98,7 @@ export default function EquipmentCard({
         }}
       />
 
-      <CardContent sx={{ flex: 1, pt: 3 }}>
+      <CardContent sx={{ flex: 1, pt: 3, px: { xs: 2, sm: 3 } }}>
         {/* Header: Name + Status Chip */}
         <Box
           sx={{
@@ -106,9 +106,17 @@ export default function EquipmentCard({
             justifyContent: "space-between",
             alignItems: "flex-start",
             mb: 2.5,
+            gap: 1,
           }}
         >
-          <Typography variant="h6" sx={{ fontSize: "1.1rem", fontWeight: 600 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontSize: { xs: "1rem", sm: "1.1rem" },
+              fontWeight: 600,
+              wordBreak: "break-word",
+            }}
+          >
             {equipment.name}
           </Typography>
           <Chip

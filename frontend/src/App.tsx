@@ -17,8 +17,8 @@ function App() {
       <Box
         component="nav"
         sx={{
-          py: 2,
-          px: 3,
+          py: { xs: 1.5, sm: 2 },
+          px: { xs: 2, sm: 3 },
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -39,17 +39,18 @@ function App() {
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             letterSpacing: "-0.02em",
+            fontSize: { xs: "1rem", sm: "1.25rem" },
           }}
         >
           Equipment Tracker
         </Typography>
 
         {/* Navigation Links */}
-        <Stack direction="row" spacing={1}>
+        <Stack direction="row" spacing={{ xs: 0.5, sm: 1 }}>
           <Button
             component={RouterLink}
             to="/"
-            startIcon={<DashboardIcon sx={{ fontSize: 18 }} />}
+            startIcon={<DashboardIcon sx={{ fontSize: { xs: 16, sm: 18 } }} />}
             sx={{
               color:
                 location.pathname === "/" ? "secondary.main" : "text.secondary",
@@ -60,14 +61,31 @@ function App() {
               "&:hover": {
                 backgroundColor: "rgba(99, 102, 241, 0.12)",
               },
+              minWidth: { xs: "auto", sm: 64 },
+              px: { xs: 1.5, sm: 2 },
+              fontSize: { xs: "0.8rem", sm: "0.875rem" },
+              "& .MuiButton-startIcon": {
+                mr: { xs: 0.5, sm: 1 },
+              },
             }}
           >
-            Dashboard
+            <Box
+              component="span"
+              sx={{ display: { xs: "none", sm: "inline" } }}
+            >
+              Dashboard
+            </Box>
+            <Box
+              component="span"
+              sx={{ display: { xs: "inline", sm: "none" } }}
+            >
+              Home
+            </Box>
           </Button>
           <Button
             component={RouterLink}
             to="/history"
-            startIcon={<HistoryIcon sx={{ fontSize: 18 }} />}
+            startIcon={<HistoryIcon sx={{ fontSize: { xs: 16, sm: 18 } }} />}
             sx={{
               color:
                 location.pathname === "/history"
@@ -80,6 +98,12 @@ function App() {
               "&:hover": {
                 backgroundColor: "rgba(99, 102, 241, 0.12)",
               },
+              minWidth: { xs: "auto", sm: 64 },
+              px: { xs: 1.5, sm: 2 },
+              fontSize: { xs: "0.8rem", sm: "0.875rem" },
+              "& .MuiButton-startIcon": {
+                mr: { xs: 0.5, sm: 1 },
+              },
             }}
           >
             History
@@ -88,7 +112,15 @@ function App() {
       </Box>
 
       {/* Main Content */}
-      <Container maxWidth="lg" sx={{ mt: 5, mb: 5, flex: 1 }}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          mt: { xs: 2, sm: 3, md: 5 },
+          mb: { xs: 2, sm: 3, md: 5 },
+          px: { xs: 2, sm: 3 },
+          flex: 1,
+        }}
+      >
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/history" element={<History />} />

@@ -71,7 +71,7 @@ export default function History() {
             State History
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Track and analyze equipment state changes over time
+            Track and analyse equipment state changes over time
           </Typography>
         </Box>
 

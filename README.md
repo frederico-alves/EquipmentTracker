@@ -1,7 +1,7 @@
 # Equipment Tracker
 
-- backend
-- frontend
+- Equipment Dashboard - Monitor and manage your equipment states in real-time
+- State History - Track and analyse equipment state changes over time
 
 ## Run project from Docker
 

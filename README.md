@@ -23,6 +23,10 @@ docker-compose up -d
 docker-compose down
 ```
 
+## Frontend
+
+http://localhost:3000/
+
 ## Backend
 
 http://localhost:5284/swagger
@@ -45,11 +49,4 @@ SELECT * FROM state_changes;
 
 # Exit
 \q
-```
-
-## Frontend
-
-```
-cd frontend
-npm i && npm run dev
 ```
